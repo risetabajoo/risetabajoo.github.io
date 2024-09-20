@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Schedule Planner</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+    /* styles.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: left;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #34495e;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#scheduleResult {
+    background-color: #ecf0f1;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+#scheduleResult h3 {
+    color: #2c3e50;
+}
+
+#scheduleResult p
+  </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Production Schedule Planner</h1>
+        <div class="input-section">
+            <h2>Input Data</h2>
+
+            <label for="machines">Number of Machines:</label>
+            <input type="number" id="machines" placeholder="e.g., 5" required>
+
+            <label for="capacity">Machine Capacity (units per hour):</label>
+            <input type="number" id="capacity" placeholder="e.g., 50" required>
+
+            <label for="efficiency">Machine Efficiency (%):</label>
+            <input type="number" id="efficiency" placeholder="e.g., 85" required>
+
+            <label for="shift">Shifts per Day (Hours per Shift):</label>
+            <select id="shift" required>
+                <option value="8">1 Shift (8 hours)</option>
+                <option value="16">2 Shifts (16 hours)</option>
+                <option value="24">3 Shifts (24 hours)</option>
+            </select>
+
+            <label for="workers">Number of Workers:</label>
+            <input type="number" id="workers" placeholder="e.g., 20" required>
+
+            <label for="worker_output">Worker Output (units per hour):</label>
+            <input type="number" id="worker_output" placeholder="e.g., 10" required>
+
+            <label for="orders">Number of Orders (Units):</label>
+            <input type="number" id="orders" placeholder="e.g., 500" required>
+
+            <button id="generateSchedule">Generate Schedule</button>
+        </div>
+
+        <div id="scheduleResult">
+            <!-- Schedule output will appear here -->
+        </div>
+    </div>
+
+    <script>
+      // script.js
+document.getElementById('generateSchedule').addEventListener('click', function() {
+    // Mengambil input dari pengguna
+    const machines = parseInt(document.getElementById('machines').value);
+    const capacity = parseInt(document.getElementById('capacity').value); // Kapasitas mesin per jam
+    const efficiency = parseFloat(document.getElementById('efficiency').value) / 100; // Efisiensi mesin
+    const shifts = parseInt(document.getElementById('shift').value) / 8; // Shift dalam 8 jam
+    const workers = parseInt(document.getElementById('workers').value);
+    const workerOutput = parseInt(document.getElementById('worker_output').value); // Output per jam per pekerja
+    const orders = parseInt(document.getElementById('orders').value);
+
+    // Waktu setup mesin dan kapasitas efektif mesin
+    const effectiveMachineCapacity = capacity * efficiency; // Kapasitas efektif mesin (sesuai efisiensi)
+    const totalMachineCapacityPerDay = effectiveMachineCapacity * shifts * machines; // Kapasitas mesin per hari
+
+    // Kapasitas tenaga kerja per hari
+    const workerCapacityPerDay = workerOutput * shifts * workers; // Output pekerja per hari
+
+    // Kapasitas total (gabungan mesin dan tenaga kerja)
+    const totalProductionCapacityPerDay = Math.min(totalMachineCapacityPerDay, workerCapacityPerDay); // Produksi minimum antara mesin dan pekerja
+
+    // Menghitung jumlah hari yang dibutuhkan untuk menyelesaikan pesanan
+    const daysRequired = Math.ceil(orders / totalProductionCapacityPerDay);
+
+    // Menampilkan hasil jadwal produksi
+    let schedule = `<h3>Production Schedule:</h3>`;
+    schedule += `<p><strong>Total Production Capacity per Day:</strong> ${totalProductionCapacityPerDay} units</p>`;
+    schedule += `<p><strong>Days Required to Complete Orders:</strong> ${daysRequired} day(s)</p>`;
+
+    // Perhitungan produksi per mesin
+    let currentDay = 1;
+    let remainingOrders = orders;
+
+    for (let i = 0; i < daysRequired; i++) {
+        let unitsProduced = Math.min(totalProductionCapacityPerDay, remainingOrders);
+        schedule += `<p>Day ${currentDay}: Produce ${unitsProduced} units.</p>`;
+        remainingOrders -= unitsProduced;
+        currentDay++;
+    }
+
+    // Menampilkan jadwal di halaman
+    document.getElementById('scheduleResult').innerHTML = schedule;
+});
+
+  </script>
+  
+</body>
+</html>
