@@ -230,9 +230,46 @@
       border-color: #00000033;
       transform: scale(1.25);
     }
+        /* Style untuk logo Abajoo */
+    .logo-container {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 150px;
+    }
+
+    .logo-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Style untuk tombol WhatsApp di pojok kanan bawah */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+
+    .whatsapp-float img {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .whatsapp-float:hover {
+      opacity: 0.8;
+    }
   </style>
 </head>
 <body>
+    <!-- Logo Abajoo -->
+  <div class="logo-container">
+    <img src="https://abajoo.co.id/wp-content/uploads/2023/06/Abajoo.png" alt="Abajoo Logo">
+  </div>
   <div class="screens" data-screen="1">
     <div class="screen screen--1 active">
       <div class="screen__content">Start from IDR 3.000.000</div>
@@ -258,6 +295,10 @@
     <a href="#3">3</a>
     <a href="#4">4</a>
   </div>
+   <!-- Tombol WhatsApp -->
+  <a href="https://wa.me/6285179634700?text=Halo%20Abajoo,%20saya%20ingin%20konsultasi%20odoo" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
+  </a>
 
   <script>
     const $screens = document.querySelector('.screens');
