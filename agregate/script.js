@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const animatedTexts = document.querySelectorAll(".animated-text");
-    let delay = 10;
+    let delay = 100;
 
     animatedTexts.forEach((elem) => {
         setTimeout(() => {
