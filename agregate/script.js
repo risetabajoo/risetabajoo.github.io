@@ -14,6 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 elem.textContent = elem.getAttribute("data-text");
             }
         }, delay);
-        delay += 10000; // Delay 0.5 detik antara setiap elemen
+        delay += 100000; // Delay 0.5 detik antara setiap elemen
     });
 });
