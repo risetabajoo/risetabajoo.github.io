@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Transkripsi Audio - AssemblyAI</title>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #555;
+}
+
+ol {
+    margin: 20px 0;
+}
+
+pre {
+    background: #eee;
+    padding: 10px;
+    border-left: 5px solid #007bff;
+    overflow-x: auto;
+    white-space: pre-wrap; /* Allows for wrapping */
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Panduan Transkripsi Audio Menggunakan AssemblyAI</h1>
+        
+        <ol>
+            <li>Siapkan File MP3</li>
+            <li>Daftar di <a href="https://www.assemblyai.com/" target="_blank">AssemblyAI</a> dan dapatkan API Key Anda.</li>
+            <li>Salin API Key yang diberikan.</li>
+            <li>
+                Gunakan Template Kode:
+                <pre id="code-block">
+import assemblyai as aai
+
+# Ganti dengan API key Anda
+aai.settings.api_key = "API_KEY_ANDA"
+
+# URL dari file yang ingin ditranskripsi
+FILE_URL = "C:\\Users\\abajo\\Music\\1 - adhigana requirement (mp3cut.net).mp3"
+
+# Konfigurasi pengaturan transkripsi
+config = aai.TranscriptionConfig(language_code='id', speech_model=aai.SpeechModel.nano)
+
+# Buat Transcriber dengan konfigurasi yang ditentukan
+transcriber = aai.Transcriber(config=config)
+
+# Transkripsi file audio
+transcript = transcriber.transcribe(FILE_URL)
+
+if transcript.status == aai.TranscriptStatus.error:
+    print(transcript.error)
+else:
+    print(transcript.text)
+                </pre>
+            </li>
+            <li>Simpa file sebagai <code>transcribe.py</code>.</li>
+            <li>Gunakan Command Prompt (CMD) dan jalankan:
+                <pre>C:\Users\abajo\assemblyai-example&gt;py transcribe.py</pre>
+            </li>
+        </ol>
+        
+        <h2>Persiapan Instalasi</h2>
+        <ol>
+            <li>
+                <strong>Instal Python</strong> - Download dan instal Python untuk Windows di <a href="https://www.python.org/downloads/" target="_blank">sini</a>.
+            </li>
+            <li>
+                <strong>Perbarui Pip</strong> - Jalankan perintah berikut di Command Prompt:
+                <pre>C:\Users\abajo&gt;py -m ensurepip --upgrade</pre>
+            </li>
+            <li>
+                <strong>Cek Versi Pip</strong> - Periksa versi pip:
+                <pre>C:\Users\abajo&gt;py -m pip --version</pre>
+            </li>
+            <li>
+                <strong>Instalasi AssemblyAI</strong> - Jalankan:
+                <pre>C:\Users\abajo&gt;py -m pip install -U assemblyai</pre>
+            </li>
+        </ol>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
