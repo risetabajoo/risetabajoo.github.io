@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langkah Menambahkan Filter Comment di Odoo</title>
+<styles>
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Libre+Baskerville&display=swap');
+
+body {
+    font-family: 'Libre Baskerville', serif;
+    background-color: #f7f4ea;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff9e6;
+    border: 1px solid #d6c1a9;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: 'IM Fell English SC', serif;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #4c3a23;
+}
+
+.subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #7d6a4e;
+    margin-bottom: 30px;
+}
+
+article h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #4c3a23;
+}
+
+p, ul {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+code {
+    background-color: #f0ebe3;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+pre {
+    background-color: #f5f5f0;
+    border-left: 4px solid #c2a87e;
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace
+</styles>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Langkah-langkah Menambahkan Filter <i>Comment</i> di Odoo</h1>
+            <p class="subtitle">Tutorial untuk pengguna Odoo</p>
+        </header>
+
+        <article class="content">
+            <section>
+                <h2>1. Aktifkan Debug Mode</h2>
+                <p>Masuk ke Odoo. ketika di url dengan menambahkan <strong>?debug=1</strong>, lalu muncul <strong>Gambar kepik di atas</strong>.</p>
+            </section>
+
+            <section>
+                <h2>2. Navigasi ke Model <i>res.partner</i></h2>
+                <p>Buka menu <strong>Contacts</strong> yang berkaitan dengan model <i>res.partner</i>. Klik pada <strong>Edit SearchView</strong> untuk mengedit tampilan pencarian.</p>
+            </section>
+
+            <section>
+                <h2>3. Edit Search View</h2>
+                <p>Di bagian <strong>Inherited View</strong>, add line untuk membuat view baru
+            </section>
+
+            <section>
+                <h2>4. Buat Inherited View</h2>
+                <p>Di bagian <strong>Inherited Views</strong>, klik untuk membuat <i>inherited view</i> baru. Isi informasi berikut:</p>
+                <ul>
+                    <li><strong>View Name</strong>: Beri nama untuk inherited view, misalnya <code>Inherit Comment Filter</code>.</li>
+                    <li><strong>View Type</strong>: Pilih <strong>Search</strong>.</li>
+                    <li><strong>Active</strong>: Pastikan opsi ini dicentang.</li>
+                    <li><strong>Inherited View</strong>: Pastikan ini dicentang juga.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>5. Base View</h2>
+                <p><strong>Model Data</strong>: Pilih (auto default)<i>res.partner.select</i>. <strong>External ID</strong>: (di langkah selanjutnya)<code>biarkan kosong saja dulu</code></p>
+            </section>
+
+            <section>
+                <h2>6. Menambahkan Kode XML</h2>
+                <pre><code>&lt;xpath expr=&quot;//search&quot; position=&quot;inside&quot;&gt;
+    &lt;filter name=&quot;comment&quot; string=&quot;Notes&quot; context=&quot;{'group_by': 'comment'}&quot;/&gt;
+&lt;/xpath&gt;
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>7. Menyimpan dan Mengupdate</h2>
+                <p>Setelah menempelkan kode, klik <strong>Save</strong> dan segarkan halaman Odoo.</p>
+            </section>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Tutorial Klasik Odoo | Dibuat oleh Abajoo</p>
+    </footer>
+
+    <script>
+    // script.js
+window.onload = function() {
+    console.log("Halaman dimuat dengan sukses!");
+};
+
+</script>
+</body>
+</html>
