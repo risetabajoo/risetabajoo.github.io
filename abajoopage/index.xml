@@ -1,0 +1,152 @@
+<main>
+  <section>
+    <h1>
+      <span>
+        ABAJOO DIGITAL SOLUTIONS
+      </span>
+      <span></span>
+    </h1>
+  </section>
+
+  <content>
+    <article>
+      <span>Yugo Creative<br /> & Abajoo Team</span>
+      <span>Present...</span>
+      <span>
+        Digital Transformation Journey
+        <br />
+        <small>Empowering Businesses with Odoo</small>
+      </span>
+      <span>Innovative, adaptive, and ready to scale</span>
+      <span>Technology-driven, people-centric</span>
+      <span>Comprehensive ERP solutions to grow your business</span>
+      <span>Automation, integration, seamless execution</span>
+      <span>Cloud-powered efficiency, digital revolution</span>
+      <span>Bridging gaps with innovation, accelerating growth</span>
+      <span>Smarter solutions, greater outcomes</span>
+      <span>Transform your business operations</span>
+      <span>
+        <span>Future<wbr>proof</span>
+      </span>
+      <span class="bigger-1">
+        <span>Future<wbr>proof</span>
+      </span>
+      <span class="bigger-2">
+        <span>Future<wbr>proof</span>
+      </span>
+      <span class="bigger-3">
+        <span>Future<wbr>proof Innovation</span>
+      </span>
+      <span>
+        <span>Future<wbr>proof</span>
+      </span>
+      <span class="bigger-1">
+        <span>Future<wbr>proof</span>
+      </span>
+      <span class="bigger-2">
+        <span>Future<wbr>proof</span>
+      </span>
+      <span class="bigger-3">
+        <span>Future<wbr>proof Innovation</span>
+      </span>
+      <span>Empowering teams with technology-driven tools</span>
+      <span>Integrating processes, enhancing collaboration</span>
+      <span>Global scalability, local expertise</span>
+      <span>Data-driven decisions, powered by Odoo</span>
+      <span>Elevating efficiency, creating value</span>
+      <span>Streamlined operations for sustainable growth</span>
+      <span>Driving digital transformation in real time</span>
+      <span>
+        <span>Future<wbr>proof</span>
+      </span>
+      <span class="bigger-1">
+        <span>Future<wbr>proof</span>
+      </span>
+      <span class="bigger-2">
+        <span>Future<wbr>proof</span>
+      </span>
+      <span class="bigger-3">
+        <span>Future<wbr>proof Innovation</span>
+      </span>
+      <span>Optimizing workflows for maximum impact</span>
+      <span>Data transparency, actionable insights</span>
+      <span>Agility, scalability, and growth with Abajoo</span>
+      <span>Building the future of digital enterprises</span>
+      <span>Custom solutions tailored for every industry</span>
+      <span>Collaborating for success, partnering for growth</span>
+      <span>Roadmap to success starts with Abajoo</span>
+      <span>
+        <span>Future<wbr>proof</span>
+      </span>
+      <span class="bigger-1">
+        <span>Future<wbr>proof</span>
+      </span>
+      <span class="bigger-2">
+        <span>Future<wbr>proof</span>
+      </span>
+      <span class="bigger-3">
+        <span>Future<wbr>proof Innovation</span>
+      </span>
+      <span>
+        <span>Future<wbr>proof</span>
+      </span>
+      <span class="bigger-1">
+        <span>Future<wbr>proof</span>
+      </span>
+      <span class="bigger-2">
+        <span>Future<wbr>proof</span>
+      </span>
+      <span class="bigger-3">
+        <span>Future<wbr>proof Innovation</span>
+      </span>
+      <span>
+        <span>Like & Subscribe 👍</span>
+      </span>
+      <span>Contact Us for a Free Consultation</span>
+    </article>
+  </content>
+
+  <div></div>
+
+  <playerwrap>
+    <playerlight>
+      <player1>
+        <u>
+          <u><u></u><u></u></u><u><u></u><u></u><u></u><u><u></u></u></u>
+        </u>
+      </player1>
+    </playerlight>
+  </playerwrap>
+
+  <playerwrap>
+    <player2>
+      <u>
+        <u><u></u><u></u></u><u><u></u><u></u><u></u><u><u></u></u></u>
+      </u>
+    </player2>
+    <player2>
+      <u>
+        <u><u></u><u></u></u><u><u></u><u></u><u></u><u><u></u></u></u>
+      </u>
+    </player2>
+  </playerwrap>
+
+  <footer>
+    <script>
+      function go() {
+        var x = document.getElementById('y');
+        x.paused ? x.play() : x.pause();
+      }
+    </script>
+    <audio id="y">
+      <source src="https://your-website.com/abajoo-journey.mp3" type="audio/mpeg" />
+    </audio>
+    <a href="https://abajoo.co.id" title="Abajoo Official Website">
+      <sig><u></u></sig>
+    </a>
+    <play>
+      <input id="play-radio" type="radio" name="radio" onclick="go()" autofocus>
+    </play>
+    <input id="stop-radio" type="radio" name="radio" onclick="go()">
+  </footer>
+</main>
